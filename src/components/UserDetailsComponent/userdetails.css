@@ -1,0 +1,122 @@
+.userdetails-body {
+    background: #E5E5E5;
+    padding: 2rem;
+}
+
+.userdetails-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.user-category span {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+.user-category .user-blacklist {
+    border: 1px solid #E4033B;
+    color: #E4033B;
+
+}
+.user-category .user-activate {
+    border: 1px solid #39CDCC;
+    color: #39CDCC;
+
+}
+
+.user-category span:first-child {
+    margin-right: 0.5rem;
+}
+
+.user-basic-info,
+.general-details {
+    background: #fff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    margin: 1rem 0;
+}
+
+.basic-info-top {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+    .basic-info-top {
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.basic-info-top .basic-info {
+    display: grid;
+    align-content: center;
+    padding: 0 1rem;
+}
+.basic-info-top .basic-info:not(:last-child) {
+    border-right: 1px solid rgba( 84,95,125,0.2);
+}
+
+.basic-info-down {
+    /* padding: 0 1rem; */
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+.basic-info-down span {
+    margin: 0 1rem;
+}
+.basic-info-down span.active {
+    border-bottom: 2px solid #39CDCC;
+}
+
+/* .general-details {
+
+} */
+.general-details-wrapper {
+    padding: 1rem;
+    font-size: 0.75rem;
+    border-bottom: 1px solid rgba( 84,95,125,0.2);
+}
+
+.sub-general-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.sub-general {
+    display: flex;
+    justify-content: space-between;
+}
+.sub-general-heading {
+    text-transform: uppercase;
+}
+.sub-general-content {
+    color: #545F7D;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+@media screen and (min-width: 768px) {
+    .general-details-wrapper {
+        font-size: 0.9rem;
+    }
+    .general-details-heading {
+        padding: 1rem;
+    }
+    .sub-general-wrapper {
+        flex-direction: row;
+        /* justify-content: space-between; */
+        flex-wrap: wrap;
+    }
+    .sub-general {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}

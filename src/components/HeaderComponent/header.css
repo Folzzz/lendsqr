@@ -1,0 +1,129 @@
+.header {
+    padding: 2rem 1.2rem;
+    box-shadow: 0px 2px 4px 0px rgba(70, 70, 70, 0.1);
+    background-color: #fff;
+    width: 100%;
+}
+.brand-section,
+.search-section,
+.profile-section {
+    padding: 0 0.5rem;
+    /* width: 100%; */
+}
+
+.brand-section img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.search-section .search-bar {
+    display: flex;
+}
+.search-section .search-bar input,
+.search-section .search-bar button {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    box-shadow: 2px 2px 4px 0px rgba(70, 70, 70, 0.38);
+}
+
+.search-section .search-bar input {
+    width: 100%;
+    border-top-left-radius: 0.7rem;
+    border-bottom-left-radius: 0.7rem;
+    background: #fff;
+
+}
+.search-section .search-bar button {
+    border-top-right-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+
+    background: #39CDCC;
+    
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+.profile-content:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-name .arrow-down {
+
+    width: 0;
+    height: 0;
+    display: inline-block;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+    border-top: 10px solid #555;
+    cursor: pointer;
+
+}
+
+/* .profile-img,
+.profile-name {
+    visibility: hidden;
+    display: none;
+} */
+/* main-body section style
+.main-body {
+    display: flex;
+}
+
+/* .sidebar-section {
+    width: 5%;
+}
+
+.body-section {
+    background: #E5E5E5;
+    width: 100%;
+} */
+
+/* @media screen and (min-width: 992px) {
+    .sidebar-section {
+        width: 25%;
+    }
+    
+    .body-section {
+        background: #E5E5E5;
+        width: 75%;
+    }
+} */
+
+@media screen and (min-width: 463px) {
+    .header {
+        padding: 2rem 1.2rem;
+        /* display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 2px 4px 0px rgba(70, 70, 70, 0.1);
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .header {
+        padding: 2rem 0rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        place-items: center;
+    }
+    .profile-section {
+        padding-top: unset;
+    }
+
+}
