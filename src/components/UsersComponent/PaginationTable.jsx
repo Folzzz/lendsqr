@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
-import {useTable, usePagination} from 'react-table';
+import {useTable, usePagination, ReactTable} from 'react-table';
+import PropTypes from 'prop-types'; 
 // import {useTable} from "react-table-6";  
 import "react-table-6/react-table.css" 
 
@@ -9,7 +10,7 @@ import MOCK_DATA from './userlendsqr.json';
 // import './table.css';
 // import "./react-table/react-table.css";
 
-export const COLUMNS = [
+const COLUMNS = [
 
     {
         Header: 'ORGANIZATION',
@@ -35,23 +36,24 @@ export const COLUMNS = [
         Header: 'DATE JOINED',
         accessor: 'date'
     },
+
     {
         Header: 'STATUS',
         accessor: 'status',
-        // Cell: row  => {
-        //     row.styles['color']= row.value == 'active' ? '#39CD62' : row.value == 'inactive' ? '#545F7D' : row.value == 'pending' ? '#E9B200' : '#E4033B' ;
-        //     row.styles['backgroundColor'] = row.value ==  'active' ? 'rgba(0, 192, 0, 0.04)' : row.value == 'inactive' ? 'rgba(0, 0, 192, 0.04) ': row.value == 'pending' ? 'rgba(94, 119, 37, 0.04)' : 'rgba(228,3,59,0.04)';
-        //     return row.value;
-        // }
+        Cell: row => {
+            row.styles["color"] =
+              row.value.toLowerCase() == "pending" ? "green" : "blue";
+            row.styles["backgroundColor"] =
+              row.value.toLowerCase() == "pending"
+                ? "black"
+                : row.value.toLowerCase() == "inactive"
+                ? "salmon "
+                : row.value.toLowerCase() == "active"
+                ? "purple"
+                : "yellow";
+            return row.value;
 
-        // getProps: (state, rowInfo, column) => {
-        //     return {
-        //         style: {
-        //             backgroundColor: `rowInfo && rowInfo.row.status == 'active' ? red : green`,
-        //         },
-        //     };
-        // }
-
+        }
     }
 
 ]
@@ -75,6 +77,7 @@ const PaginationTable = () => {
 
     const { getTableProps, 
          getTableBodyProps,
+         getCellProps,
          headerGroups, 
          page, 
          nextPage, 
@@ -129,12 +132,11 @@ const PaginationTable = () => {
                             )
                         })
                     }
-                    {/* <tr>
-                        <td></td>
-                    </tr> */}
+                    
                 </tbody>
 
             </table>
+            
             <div className="pagination-wrapper">
                 <span className='paginate-left'>
                     Showing page{' '} 
