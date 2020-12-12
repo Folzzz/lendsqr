@@ -109,13 +109,13 @@ const User = () => {
                 </div>
 
 
-                {/* <div className="table-wrapper"> */}
+                <div className="table-wrapper">
                     <div className="all-user-container">
                         <div className="all-user-table-wrapper">
                             <AnotherTable />
                         </div>
                     </div>
-                {/* </div> */}
+                </div>
         </div>
 
     )

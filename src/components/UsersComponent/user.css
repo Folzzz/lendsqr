@@ -21,7 +21,7 @@
 
     background: #FFFFFF;
     /* border: 1px solid rgba(33, 63, 125, 0.06); */
-    /* box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04); */
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
 }
 .table-data-header tr th {
@@ -34,16 +34,16 @@
 
 
 .react-bootstrap-table table {
-    margin: 2rem 0 1rem;
-    padding: 1rem;
+    /* margin: 2rem 0 1rem; */
+    /* padding: 1rem; */
     
 
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     
     table-layout: fixed;
     /* overflow-x: auto; */
     display: block;
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    /* box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04); */
 }
 .react-bootstrap-table > .table > thead > tr > th,
 .react-bootstrap-table > .table > tbody > tr > th,
