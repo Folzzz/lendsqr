@@ -1,48 +1,160 @@
-import "react-table-6/react-table.css" 
+
+// export const COLUMNS = [
+
+//     {
+//         id: 'col1',
+//         Header: () => (
+//             <span>
+//               ORGANIZATION <img src="../../img/user-arrow.svg" alt=""/>
+//             </span>
+//           ),
+//         accessor: 'company'
+//     },
+
+//     {
+//         id: 'col2',
+//         Header: () => (
+//             <span>
+//               USERNAME <img src="../../img/user-arrow.svg" alt=""/>
+//             </span>
+//           ),
+//         accessor: 'username'
+//     },
+
+//     {
+//         id: 'col3',
+//         Header: () => (
+//             <span>
+//               EMAIL <img src="../../img/user-arrow.svg" alt=""/>
+//             </span>
+//           ),
+//         accessor: 'email'
+//     },
+
+//     {
+//         id: 'col4',
+//         Header: () => (
+//             <span>
+//               PHONE NUMBER <img src="../../img/user-arrow.svg" alt=""/>
+//             </span>
+//           ),
+//         accessor: 'phone'
+//     },
+
+//     {
+//         id: 'col5',
+//         Header: () => (
+//             <span>
+//               DATE JOINED <img src="../../img/user-arrow.svg" alt=""/>
+//             </span>
+//           ),
+//         accessor: 'date',
+//     },
+//     {
+//         id: 'col6',
+//         Header: () => (
+//             <span>
+//               STATUS <img src="../../img/user-arrow.svg" alt=""/>
+//             </span>
+//           ),
+//         accessor: 'status',
+//         Cell: row => {
+//             row.styles["color"] =
+//               row.value.toLowerCase() == "pending" ? "green" : "blue";
+//             row.styles["backgroundColor"] =
+//               row.value.toLowerCase() == "pending"
+//                 ? "black"
+//                 : row.value.toLowerCase() == "inactive"
+//                 ? "salmon "
+//                 : row.value.toLowerCase() == "active"
+//                 ? "purple"
+//                 : "yellow";
+//             row.styles["borderRadius"] = `100px`
+//             row.styles["textAlign"] = `center`
+//             return row.value;
+
+//         }
+//     },
+
+//     {Cell: row => (
+//         <td 
+//         style={{
+//             textAlign: "right",
+//             display: "flex",
+//             justifyContent: "flex-end"
+//           }}
+  
+//         >
+//              <img src="../../img/table-icon.svg" alt=""/>
+//         </td>
+//     )}
+// ]
 
 export const COLUMNS = [
 
     {
-        Header: 'ORGANIZATION',
-        accessor: 'company'
+        dataField: 'company',
+        text: <span> ORGANIZATION <img src="./../img/user-arrow.svg" alt=""/></span>,
     },
 
     {
-        Header: 'USERNAME',
-        accessor: 'username'
+       
+        dataField: 'username',
+        text: <span> USERNAME <img src="./../img/user-arrow.svg" alt=""/></span>,
     },
 
     {
-        Header: 'EMAIL',
-        accessor: 'email'
+     
+      dataField: 'email',
+      text: <span> EMAIL <img src="./../img/user-arrow.svg" alt=""/></span>,
     },
 
     {
-        Header: 'PHONE NUMBER',
-        accessor: 'phone'
+        dataField: 'phone',
+        text: <span> PHONE NUMBER <img src="./../img/user-arrow.svg" alt=""/></span>,
     },
 
     {
-        Header: 'DATE JOINED',
-        accessor: 'date'
+        dataField: 'date',
+        text: <span> DATE JOINED <img src="./../img/user-arrow.svg" alt=""/></span>,
     },
     {
-        Header: 'STATUS',
-        accessor: 'status',
-        // Cell: (row, original, index, viewIndex, level, nestingPath, aggregated, subRows,rowInfo)  => {
-        //     row.styles['color ']= row.value == 'active' ? '#39CD62' : row.value == 'inactive' ? '#545F7D' : row.value == 'pending' ? '#E9B200' : '#E4033B' ;
-        //     row.styles['backgroundColor'] = row.value ==  'active' ? 'rgba(0, 192, 0, 0.04)' : row.value == 'inactive' ? 'rgba(0, 0, 192, 0.04) ': row.value == 'pending' ? 'rgba(94, 119, 37, 0.04)' : 'rgba(228,3,59,0.04)';
-        //     return row.status;
-        // }
-        getProps: (state, rowInfo, column) => {
-            return {
-                style: {
-                    backgroundColor: rowInfo.row.status == 'active' ? 'red' : 'green',
-                },
-            };
+      dataField: 'status',
+      text: <span> STATUS <img src="./../img/user-arrow.svg" alt=""/></span>,
+      style: (cell, row, rowIndex, colIndex) => {
+        console.log(cell);
+        if (cell.toLowerCase() === 'active') {
+          return {
+            backgroundColor: `rgba(0, 192, 0, 0.08)`,
+            color: `#39CD62`,
+            borderRadius: `100px`,
+            textAlign: `center`
+          };
+        } else if (cell.toLowerCase() === 'pending') {
+          return {
+            backgroundColor: `rgba(233, 178, 0, 0.08)`,
+            color: `#E9B200`,
+            borderRadius: `100px`,
+            textAlign: `center`
+          };
+        } else if (cell.toLowerCase() === 'inactive') {
+          return {
+            backgroundColor: `rgba(84, 95, 125, 0.08)`,
+            color: `#545F7D`,
+            borderRadius: `100px`,
+            textAlign: `center`
+          };
+        } else {
+          return {
+            backgroundColor: `rgba(192, 0, 0, 0.08)`,
+            color: `#E4033B`,
+            borderRadius: `100px`,
+            textAlign: `center`
+          };
         }
+        
+      }
 
-    }
-
+    },
 ]
 

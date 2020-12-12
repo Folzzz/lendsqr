@@ -10,6 +10,9 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import * as ReactBootStrap from 'react-bootstrap';
 import PaginationTable from './PaginationTable';
+import NewTable from './NewTable';
+import TableSection from './TableSection';
+import AnotherTable from './AnotherTable';
 
 const User = () => {
 
@@ -106,54 +109,13 @@ const User = () => {
                 </div>
 
 
-                <div className="table-wrapper">
-                <div className="all-user-container">
-                    <div className="all-user-table-wrapper">
-                        <PaginationTable />
-                    {/* <UserTable  userData={currentPosts} loading={loading} id="userprofile"/>
-                    <UserTablePagination postPerPage={postPerPage} totalUserData={totalDataCount} paginate={paginate}/>
-
-    <span>Showing {indexOfLastPost} out of {totalDataCount} users</span> */}
+                {/* <div className="table-wrapper"> */}
+                    <div className="all-user-container">
+                        <div className="all-user-table-wrapper">
+                            <AnotherTable />
+                        </div>
                     </div>
-                </div>
-                </div>
-                {/* <div className="all-user-container">
-                    <div className="all-user-table-wrapper">
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th>organization <img src="../../img/user-arrow.svg" alt=""/></th>
-                                    <th>Username <img src="../../img/user-arrow.svg" alt=""/></th>
-                                    <th>Email <img src="../../img/user-arrow.svg" alt=""/></th>
-                                    <th>Phone number <img src="../../img/user-arrow.svg" alt=""/></th>
-                                    <th>Date joined <img src="../../img/user-arrow.svg" alt=""/></th>
-                                    <th>Status <img src="../../img/user-arrow.svg" alt=""/></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {
-                                    userData.map(user => (
-                                        <tr key={user.id}>
-                                            <td>{user.company}</td>
-                                            <td>{user.username}</td>
-                                            <td>{user.email}</td>
-                                            <td>{user.phone}</td>
-                                            <td>{user.date}</td>
-                                            {user.status ? (<td>active</td>) : (<td>inactive</td>)}
-                                            {/* <td>{user.status ? active }</td> */}
-                                        {/* </tr>
-                                    ))
-                                }
-                                <tr>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div className="pagination-wrapper"></div>
-                </div> */}
+                {/* </div> */}
         </div>
 
     )
